@@ -1,19 +1,19 @@
 {% extends 'ejemplo/base.html' %}
 
 {% block titulo%} 
-Buscar Familiares por nombre
+Buscar Vehiculos por titular
 {% endblock %} #reemplaza el subtitulo en base
 
 {% block contenido %} 
-<form action="/mi-familia/buscar" method="post">
+<form action="/vehiculo/buscar" method="post">
   {% csrf_token %}
   {{ form }}
   <input type="submit" value="Submit">
 </form>
 
-{% for familiar in lista_familiares %}
+{% for titular in lista_vehiculo %}
     <ul>
-        <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}</li>
+        <li> Titular: {{vehiculo.titular}}, Tipo: {{vehiculo.tipo}}, Marca: {{vehiculo.marca}}</li>
     </ul>
 {% endfor %}
 {% endblock %} 

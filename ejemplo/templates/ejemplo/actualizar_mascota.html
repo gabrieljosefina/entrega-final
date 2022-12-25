@@ -1,0 +1,14 @@
+{% extends 'ejemplo/base.html' %}
+{% block titulo%} Modificar una mascota {% endblock %}
+{% block contenido %}
+
+
+<form action="/mascota/actualizar/{{ mascota.id }}" method="post"> 
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Actualizar">
+</form>
+
+<h2 style="color:green">{{msg_exito}}</h2>
+
+{% endblock %}
